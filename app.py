@@ -1,7 +1,7 @@
 '''
 Goal of LSTM microservice:
 1. LSTM microservice will accept the GitHub data from Flask microservice and will forecast the data for next 1 year based on past 30 days
-2. It will also plot three different graph (i.e.  "Model Loss", "LSTM Generated Data", "All Issues Data") using matplot lib 
+2. It will also plot three different graph (i.e.  "Model Loss", "LSTM Generated Data", "All Issues Data") using matplot lib
 3. This graph will be stored as image in Google Cloud Storage.
 4. The image URL are then returned back to Flask microservice.
 '''
@@ -81,7 +81,7 @@ def forecast():
     firstDay = min(X)
 
     '''
-    To achieve data consistancy with both actual data and predicted values, 
+    To achieve data consistancy with both actual data and predicted values,
     add zeros to dates that do not have orders
     [firstDay + timedelta(days=day) for day in range((max(X) - firstDay).days + 1)]
     '''
